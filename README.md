@@ -1,6 +1,5 @@
 Admin Lte React Ts
 <a href="https://react-adminlte.netlify.app/"> Demo </a>
-<img src="ss1.png">
 
 
 ## Donation
