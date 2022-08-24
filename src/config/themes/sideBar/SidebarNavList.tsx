@@ -13,21 +13,13 @@ interface props {
 }
 const SidebarNavList: React.FC<props> = (props) => {
   let icon = props.data.icon && <i className={props.data.icon}></i>
-  let titlesub = props.data.title && <p>{props.data.title}</p>
+  let titlesub = props.data.title && <p>{props.data.title}  <i className='right fas fa-angle-left'></i></p>
 
-  let title = props.data.title && (
-    <span
-      style={{
-        color: '#fff',
-        width: 130,
-        overflow: 'hidden',
-        whiteSpace: 'nowrap',
-        textOverflow: 'ellipsis',
-      }}
-    >
-      {props.data.title}
-    </span>
-  )
+  const title = props.data.title && (
+    <p>
+      {props.data.title} 
+    </p>
+  );
 
   const [active, setActive] = useState(-1)
   const [clicked, setclicked] = useState(-1)
@@ -47,7 +39,6 @@ const SidebarNavList: React.FC<props> = (props) => {
             {props.data.children ? (
               <Link to={props.data.path} className='nav-link'>
                 {icon} {titlesub}
-                <i className='right fas fa-angle-left'></i>
               </Link>
             ) : props.data.navheader !== true ? (
               <Link to={props.data.path} className='nav-link'>

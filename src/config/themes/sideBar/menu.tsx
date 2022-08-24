@@ -4,6 +4,7 @@ interface children {
   title: string;
   type?: string;
   blank?: string;
+  children?: Array<children>;
 }
 export interface Menu {
   path: string;
@@ -32,6 +33,40 @@ const menu : Array<Menu> = [
       {
         path: "/category",
         title: "Menu 2",
+      },
+    ]
+  },
+  {
+    path: "#",
+    icon: "nav-icon fas fa-database",
+    title: "Menu Level",
+    children: [
+      {
+        path: "#",
+        title: "Level 1",
+      },
+      {
+        path: "#",
+        title: "Level 2",
+        icon : "nav-icon fas far fa-circle nav-icon",
+        children: [
+          {
+            path: "#",
+            title: "Sub Level 2",
+          },
+          {
+            path: "#",
+            title: "Sub Level 3",
+          },
+          {
+            path: "#",
+            title: "Sub Level 4",
+          },
+        ]
+      },
+      {
+        path: "#",
+        title: "Level 3",
       },
     ]
   },
